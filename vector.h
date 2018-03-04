@@ -3,6 +3,7 @@
 #define DEFAULT_CAPACITY 10//通过define设置初始容量
 //何时的划分数据结构所进行的操作，有些应该交给上层操作
 //即上层来保证它的正确性
+//#include "../../pq_complHeap/pq_complHeap/pq_complHeap.h"头文件不允许相互包含
 template <typename T>
 class Vector{
 protected:
@@ -232,6 +233,14 @@ public:
 			hi--;
 		}
 	}
+	/*void heapSort(){ heapSort(0，size);}
+	void heapSort(int lo,int hi){
+		PQ_ComplHeap<int> H(element+lo,hi-lo);
+		for(int j=hi;j>lo;j--){
+			element[j]=H.delMax();
+		}
+
+	}*/
 	void insertSort(){ insertSort(0,size);}
 	void insertSort(int lo,int hi){
 		for(int i=lo+1;i<hi;i++){
